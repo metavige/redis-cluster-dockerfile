@@ -1,6 +1,3 @@
-redis-cluster-dockerfile
-========================
-
 ## Redis Base
 
 ### bulid 
