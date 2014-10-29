@@ -4,4 +4,4 @@ RUN sed -i 's/127.0.0.1/'"\$REDIS_PORT_6379_TCP_ADDR"'/g' /etc/redis/sentinel.co
 
 CMD ["redis-sentinel", "/etc/redis/sentinel.conf"]
 
-EXPORT 26379
+EXPOSE 26379
