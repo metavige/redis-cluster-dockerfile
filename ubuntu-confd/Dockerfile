@@ -12,7 +12,7 @@ RUN \
   apt-get install -qy build-essential && \
   apt-get install -qy software-properties-common && \
   apt-get install -qy byobu htop man unzip vim supervisor wget curl git && \
-  rm -rf /var/lib/apt/lists/*
+  rm -rf /var/lib/apt/lists/* 
 
 # Better logging of services in supervisor
 RUN apt-get -qy install python-pip && pip install --quiet supervisor-stdout
