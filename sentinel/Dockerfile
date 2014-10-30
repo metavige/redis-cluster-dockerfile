@@ -1,8 +1,8 @@
 FROM nebula/redis-base
 
-RUN sed -i 's/127.0.0.1/'"\$REDIS_PORT_6379_TCP_ADDR"'/g' /etc/redis/sentinel.conf && \
-    cat /etc/redis/sentinel.conf | grep mymaster
+ADD start-sentinel.sh .
+RUN chmod +x start-sentinel.sh
 
-CMD ["redis-sentinel", "/etc/redis/sentinel.conf"]
+CMD ["start-sentinel.sh"]
 
 EXPOSE 26379
