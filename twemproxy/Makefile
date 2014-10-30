@@ -2,8 +2,8 @@ build:
 	docker build --rm -t nebula/redis-twemproxy .
 
 run:
-	docker run -d -p 22120:22120 -p 22222:22222 --link redis-standalone:redis --name redis-twemproxy nebula/redis-twemproxy
-
-rebuild: 
-	docker rmi nebula/redis-twemproxy
-	docker build --rm -t nebula/redis-twemproxy .
+	TWEMPROXY_PORT=6100
+	TWEMPROXY_STATS_PORT=6100
+	etcdctl set /services/twemproxy/port ${TWEMPROXY_PORT}
+	docker run --name=redis-twemproxy --rm -p ${TWEMPROXY_PORT}:6000 -p ${TWEMPROXY_STATS_PORT}:6001 -e ETCD_HOST=127.0.0.1:4001 nebula/redis-twemproxy
+	etcdctl set /services/twemproxy/host 127.0.0.1

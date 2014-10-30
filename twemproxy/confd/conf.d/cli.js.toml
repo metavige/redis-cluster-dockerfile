@@ -1,0 +1,9 @@
+[template]
+src = "cli.js.tmpl"
+dest = "/root/redis-twemproxy-agent/lib/cli.js"
+keys = [
+  "/services/redis/master/host",
+  "/services/redis/master/port"
+]
+reload_cmd = "/usr/bin/supervisorctl twemproxy restart"
+check_cmd = "node {{ .src }}"
