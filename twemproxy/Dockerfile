@@ -2,7 +2,9 @@ FROM nebula/ubuntu-confd
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get -qy install nodejs && \
+RUN \
+    apt-get -q update && \
+    apt-get -qy install nodejs && \
     rm -rf /var/lib/apt/lists/* && \
     ln -s /usr/bin/js /usr/bin/node
 
