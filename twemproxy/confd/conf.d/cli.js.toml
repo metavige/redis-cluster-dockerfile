@@ -1,8 +1,0 @@
-[template]
-src = "cli.js.tmpl"
-dest = "/root/redis-twemproxy-agent/lib/cli.js"
-keys = [
-  "/services/sentinel/host",
-  "/services/sentinel/port"
-]
-reload_cmd = "/usr/bin/supervisorctl twemproxy restart"
