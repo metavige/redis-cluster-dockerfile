@@ -1,5 +1,7 @@
 FROM nebula/redis-base
 
+ADD redis.conf /etc/redis/redis.conf
+
 CMD ["redis-server"]
 
 VOLUME ["/data"]
