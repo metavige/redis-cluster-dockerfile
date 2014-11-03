@@ -1,6 +1,9 @@
-FROM dockerfile/ubuntu
+FROM nebula/ubuntu-base
 
-RUN apt-get update && apt-get install redis-server -y && apt-get autoclean
+RUN apt-get update && \
+    apt-get install redis-server -y && \
+    apt-get remove -y --purge build-essential software-properties-common && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 #
 # build:  docker build -t nebula/redis-base .

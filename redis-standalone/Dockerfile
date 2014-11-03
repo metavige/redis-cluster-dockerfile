@@ -1,12 +1,16 @@
 FROM nebula/redis-base
 
 ADD redis.conf /etc/redis/redis.conf
+ADD supervisor.conf /etc/supervisor/supervisor.conf
 
-CMD ["redis-server"]
+# CMD ["redis-server"]
 
 VOLUME ["/data"]
-EXPOSE 6379
 
+EXPOSE 6379
+EXPOSE 22
+
+CMD ["/root/bin/run.sh"]
 #
 # build:  docker build -t nebula/redis-standalone .
 # run:    docker run -d nebula/redis-standalone redis-standalone
