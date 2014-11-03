@@ -1,2 +1,2 @@
 build:
-	docker build --rm -t nebula/ubuntu-confd .
+	docker build --rm --no-cache -t nebula/ubuntu-confd .
