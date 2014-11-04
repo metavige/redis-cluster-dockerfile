@@ -1,6 +1,6 @@
 FROM nebula/redis-base
 
-ADD supervisord.conf /etc/supervisor/conf.d/redis-slave.conf
+#ADD supervisor.conf /etc/supervisor/conf.d/redis-slave.conf
 ADD redis.conf /etc/redis/redis.conf
 ADD start-slave.sh /root/bin/start-slave.sh
 RUN chmod +x /root/bin/start-slave.sh
