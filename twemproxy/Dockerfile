@@ -16,7 +16,7 @@ ADD confd/conf.d/twemproxy.toml /etc/confd/conf.d/twemproxy.toml
 ADD confd/templates/twemproxy.tmpl /etc/confd/templates/twemproxy.tmpl
 
 # Copy supervisord files
-ADD supervisord.conf /etc/supervisor/supervisord.conf
+ADD supervisord.conf /etc/supervisor/conf.d/twemproxy.conf
 
 EXPOSE 6000 6222
 

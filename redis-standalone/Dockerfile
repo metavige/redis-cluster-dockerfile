@@ -1,7 +1,7 @@
 FROM nebula/redis-base
 
 ADD redis.conf /etc/redis/redis.conf
-ADD supervisord.conf /etc/supervisor/supervisord.conf
+ADD supervisord.conf /etc/supervisor/conf.d/redis.conf
 
 # CMD ["redis-server"]
 
