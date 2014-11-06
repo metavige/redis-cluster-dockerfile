@@ -4,3 +4,5 @@ build:
 run:
 	docker run -d -p 6379:6379 -p 2222:22 --name redis-standalone nebula/redis-standalone
 
+remove:
+	docker rm -f redis-standalone
